@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Role",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "leader"
+      ],
+      "properties": {
+        "leader": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "follower"
+      ],
+      "properties": {
+        "follower": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

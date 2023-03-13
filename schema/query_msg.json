@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "all_courses"
+      ],
+      "properties": {
+        "all_courses": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "course"
+      ],
+      "properties": {
+        "course": {
+          "type": "object",
+          "required": [
+            "course_id"
+          ],
+          "properties": {
+            "course_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExecuteMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "create_course"
+      ],
+      "properties": {
+        "create_course": {
+          "type": "object",
+          "required": [
+            "course_id",
+            "name"
+          ],
+          "properties": {
+            "course_id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "enroll"
+      ],
+      "properties": {
+        "enroll": {
+          "type": "object",
+          "required": [
+            "course_id",
+            "role"
+          ],
+          "properties": {
+            "course_id": {
+              "type": "string"
+            },
+            "role": {
+              "$ref": "#/definitions/Role"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "unenroll"
+      ],
+      "properties": {
+        "unenroll": {
+          "type": "object",
+          "required": [
+            "course_id"
+          ],
+          "properties": {
+            "course_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "Role": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "leader"
+          ],
+          "properties": {
+            "leader": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "follower"
+          ],
+          "properties": {
+            "follower": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}
