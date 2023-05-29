@@ -9,7 +9,7 @@ use crate::error::ContractError;
 use crate::msg::{AllCoursesResponse, CourseResponse, ExecuteMsg, InstantiateMsg, QueryMsg};
 use crate::state::{Config, Course, Role, CONFIG, COURSES};
 
-const CONTRACT_NAME: &str = "crates.io:cw-example";
+const CONTRACT_NAME: &str = env!("CARGO_PKG_NAME");
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]
